@@ -1,5 +1,22 @@
 # W3B_SC4NN3R
 
+# Introduction
+W3B_SC4NN3R is a Python tool designed for scanning websites to identify common vulnerabilities such as SQL Injection, Cross-Site Scripting (XSS), Remote Code Execution (RCE), Security Misconfiguration, Broken Authentication, and Cross-Site Request Forgery (CSRF).
+
+## Features
+- Detects SQL Injection vulnerabilities using predefined payloads.
+- Identifies XSS vulnerabilities in forms with customizable payloads.
+- Checks for Remote Code Execution vulnerabilities using potential command injection payloads.
+- Detects Security Misconfigurations related to server software versions, frameworks, and insecure cookies.
+- Identifies Broken Authentication by testing login forms with default credentials.
+- Checks for CSRF vulnerabilities by sending POST requests with test data.
+
+## Requirements
+- Python 3.x
+- Requests library
+- Beautiful Soup 4 (bs4) library
+- PyFiglet library (for ASCII banners)
+
 ## Vulnerability Types
 
 1. SQL Injection (SQLi): Detects SQL injection vulnerabilities in web forms and URLs.
