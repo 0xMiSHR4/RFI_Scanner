@@ -4,7 +4,7 @@
 
 This script is intended for educational and testing purposes only. Use it responsibly and only on web applications you have permission to test. The authors assume no liability for any misuse or damage caused by this script.
 
-## Contributing
+## Contribution
 
 Contributions are welcome! If you find a bug or have suggestions for improvements, please open an issue or submit a pull request.
 
