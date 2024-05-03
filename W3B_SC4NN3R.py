@@ -209,7 +209,7 @@ if __name__ == "__main__":
     
     print('[*] Target URL:', args.url)
     print('[*] Timeout:', args.timeout)
-    print('[*] Output file:', f"{args.url}.txt")  # Display the correct output file name
+    print('[*] Output file:', f"{args.url}.txt")
     
     time.sleep(args.timeout)
     report = scan_sql_injection(args.url)
@@ -236,7 +236,7 @@ if __name__ == "__main__":
     print(report)
     
     print('[*] Generating Report.')
-    output_file_name = re.sub(r'[^\w\s]', '_', args.url)  # Replace non-alphanumeric characters with underscores
+    output_file_name = re.sub(r'[^\w\s]', '_', args.url)
     with open(f"{output_file_name}.txt", 'w') as f:
         f.write('Vulnerability scan report for ' + args.url + ':\n\n')
         f.write(scan_sql_injection(args.url))
