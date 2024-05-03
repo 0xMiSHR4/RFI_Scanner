@@ -2,12 +2,12 @@
 
 ## Vulnerability Types
 
-SQL Injection (SQLi): Detects SQL injection vulnerabilities in web forms and URLs.
-Cross-Site Scripting (XSS): Identifies XSS vulnerabilities in input fields.
-Remote Code Execution (RCE): Scans for RCE vulnerabilities with various payloads.
-Security Misconfiguration: Detects misconfigurations in server headers and responses.
-Broken Authentication: Identifies weak authentication mechanisms and session handling.
-Cross-Site Request Forgery (CSRF): Scans for CSRF vulnerabilities in form submissions.
+1. SQL Injection (SQLi): Detects SQL injection vulnerabilities in web forms and URLs.
+2. Cross-Site Scripting (XSS): Identifies XSS vulnerabilities in input fields.
+3. Remote Code Execution (RCE): Scans for RCE vulnerabilities with various payloads.
+4. Security Misconfiguration: Detects misconfigurations in server headers and responses.
+5. Broken Authentication: Identifies weak authentication mechanisms and session handling.
+6. Cross-Site Request Forgery (CSRF): Scans for CSRF vulnerabilities in form submissions.
 
 ## Disclaimer
 
